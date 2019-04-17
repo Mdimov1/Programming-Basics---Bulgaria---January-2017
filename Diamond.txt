@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Diamond
+{
+    class Diamond
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var leftRight = (n - 1) / 2;
+            var mid = (n - (2 * leftRight)) - 2;
+
+            if (n % 2 == 0)
+            {
+                Console.Write(new string('-', leftRight));
+                Console.Write("**");
+                Console.WriteLine(new string('-', leftRight));
+
+                for (int row = 0; row < (n / 2) - 1; row++)
+                {
+                    leftRight = leftRight - 1;
+                    mid = mid + 2;
+                    Console.Write(new string('-', leftRight));
+                    Console.Write('*');
+                    Console.Write(new string('-', mid));
+                    Console.Write('*');
+                    Console.WriteLine(new string('-', leftRight));
+                }
+                var leftRightt = 0;
+                for (int j = 0; j < (n / 2) - 2; j++)
+                {
+                    leftRightt++;
+                    mid = (n - 2) - (leftRightt * 2);
+                    Console.Write(new string('-', leftRightt));
+                    Console.Write('*');
+                    Console.Write(new string('-', mid));
+                    Console.Write('*');
+                    Console.WriteLine(new string('-', leftRightt));
+                }
+                var lleftRight = (n - 2) / 2;
+                Console.Write(new string('-', lleftRight));
+                Console.Write("**");
+                Console.WriteLine(new string('-', lleftRight));
+            }
+            else
+            {
+                Console.Write(new string('-', leftRight));
+                Console.Write("*");
+                Console.WriteLine(new string('-', leftRight));
+
+                for (int b = 0; b < (n - 1) / 2; b++)
+                {
+                    leftRight = leftRight - 1;
+                    mid = mid + 2;
+                    Console.Write(new string('-', leftRight));
+                    Console.Write('*');
+                    Console.Write(new string('-', mid));
+                    Console.Write('*');
+                    Console.WriteLine(new string('-', leftRight));
+                }
+
+                for (int i = 0; i < ((n - 1) / 2) - 1; i++)
+                {
+                    leftRight++;
+                    mid = (n - 2) - (leftRight * 2);
+                    Console.Write(new string('-', leftRight));
+                    Console.Write('*');
+                    Console.Write(new string('-', mid));
+                    Console.Write('*');
+                    Console.WriteLine(new string('-', leftRight));
+                }
+
+                Console.Write(new string('-', (leftRight + 1)));
+                Console.Write("*");
+                Console.WriteLine(new string('-', (leftRight + 1)));
+            }                                       
+        }
+    }
+}

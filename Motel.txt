@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var sum = double.Parse(Console.ReadLine());
+            var sezon = Console.ReadLine().ToLower();
+
+            var nastanqvane = "";
+            var lokaciq = "";
+            double price = 0;
+
+            if (sum <= 1000)
+            {
+                nastanqvane = "Camp";
+                if (sezon == "summer")
+                {
+                    lokaciq = "Alaska";
+                    price = 0.65 * sum;
+                }
+                else
+                {
+                    lokaciq = "Morocco";
+                    price = 0.45 * sum;
+                }
+            }
+            else if (sum > 1000 && sum <= 3000)
+            {
+                nastanqvane = "Hut";
+                if (sezon == "summer")
+                {
+                    lokaciq = "Alaska";
+                    price = 0.80 * sum;
+                }
+                else
+                {
+                    lokaciq = "Morocco";
+                    price = 0.60 * sum;
+                }
+            }
+            else
+            {
+                nastanqvane = "Hotel";
+                if (sezon == "summer")
+                    lokaciq = "Alaska";
+                else
+                    lokaciq = "Morocco";
+                price = 0.90 * sum;
+            }
+            Console.WriteLine("{0} - {1} - {2:f2}", lokaciq, nastanqvane, price);
+        }
+    }
+}

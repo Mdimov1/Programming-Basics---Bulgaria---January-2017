@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LILI
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = double.Parse(Console.ReadLine());
+            var PriceWashingMashine = double.Parse(Console.ReadLine());
+            var PriceGame = double.Parse(Console.ReadLine());
+            var NumGames = 1.00;
+            var MoneyBithDay = 0.00;
+            var NumSumFromBirthDay = 0.00;
+            var BrotherSum = 0.00;
+            var SumFromGames = 0.00;
+            var SavedMoney = 0.00;
+            var allSavedSum = 0.00;
+            var UnusingMOneys = 0.00;
+
+            for (int i = 1; i <= n; i++)
+            {
+                BrotherSum = MoneyBithDay;
+                NumSumFromBirthDay = (MoneyBithDay * 10);
+                SumFromGames = NumGames * PriceGame;
+                SavedMoney = NumSumFromBirthDay - BrotherSum;
+                allSavedSum = SumFromGames + SavedMoney;
+                UnusingMOneys = Math.Abs(PriceWashingMashine - allSavedSum);
+
+                if (i % 2 != 0)
+                {
+                    NumGames++;
+                }
+                if (i % 2 == 0)
+                {
+                    MoneyBithDay++;   
+                }
+            }
+            if (allSavedSum == PriceWashingMashine)
+            {
+                Console.WriteLine("Yes! 0");
+            }
+            else if (allSavedSum > PriceWashingMashine)
+            {
+                Console.WriteLine("Yes! {0:f2}", UnusingMOneys);
+            }
+            else if (allSavedSum < PriceWashingMashine)
+            {
+                Console.WriteLine("No! {0:f2}", UnusingMOneys);
+            }
+
+        }
+    }
+}

@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _9.Pefect_Diamond
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var n = int.Parse(Console.ReadLine());
+            var firstandlastroll = new string(' ', n - 1) + "*";
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n-i-1; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int l = 0; l < 2*i+1; l++)
+                {
+                    if (l % 2 == 0)
+                    Console.Write("*");
+                    else Console.Write("-");
+                }
+                Console.WriteLine();     
+            }
+            for (int i = 0; i < (2*n)-1; i++)
+            {
+                if(i % 2 == 0)
+                Console.Write('*');
+                else
+                    Console.Write('-');
+            }
+            Console.WriteLine();
+            var stars = 3;
+            for (int g = 1; g <= n-1; g++)
+            {
+                Console.Write(new string(' ', g));
+                for (int od = 0; od < (2 * n) - stars; od++)
+                {
+                if (od % 2 == 0)
+                        Console.Write('*');
+                else
+                        Console.Write('-');
+                }
+                stars += 2;
+                Console.WriteLine();
+            }
+
+        }
+    }
+}

@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _06.LettersCombinations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var start = char.Parse(Console.ReadLine().ToLower());
+            var end = char.Parse(Console.ReadLine().ToLower());
+            var toSkip = char.Parse(Console.ReadLine().ToLower());
+            var num = 0;
+            for (char i = start; i <= end; i++)
+            {
+                for (char g = start; g <= end; g++)
+                {
+                    for (char m = start; m <= end; m++)
+                    {
+                        if (i != toSkip && g != toSkip && m != toSkip)
+                        {
+                            Console.Write($"{i}{g}{m} ");
+                            num++;
+                        }
+                    }
+                }
+            }
+            Console.Write(num);
+            Console.WriteLine();
+        }
+    }
+}

@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _06
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var start = int.Parse(Console.ReadLine());
+            var end = int.Parse(Console.ReadLine());
+            var magicNum = int.Parse(Console.ReadLine());
+
+            var numCombinationst = 0;
+
+            for (int i = start; i >= end; i--)
+            {
+                for (int g = start; g >= end; g--)
+                {
+                    numCombinationst++;
+                    if ((i + g) == magicNum)
+                    {
+                        Console.Write("Combination N:{0} ", numCombinationst);
+                        Console.WriteLine("({0} + {1} = {2})", i, g, magicNum);
+                        return;
+                    }
+                }
+            }
+            Console.WriteLine("{0} combinations - neither equals {1}", numCombinationst, magicNum);
+        }
+    }
+}

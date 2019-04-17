@@ -1,0 +1,26 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		var n = int.Parse(Console.ReadLine());
+		
+		Console.WriteLine("/`"+new string('P',2*n)+new string(' ', n)+"/`I"+new string(' ', n)+"/`N"+new string(' ', 2*n+1)+'N');		
+
+	    
+		for (int i = 0; i <= 2*n; i++)
+		{		
+			if (i != -1 & i < n-1)
+        		Console.WriteLine("| P"+new string(' ', 2*n-2)+"P"+new string(' ', n)+"| I"+new string(' ', n)+"| N"+new string(' ', i)+'N'+new string(' ',2*n-i)+'N');				    
+		    else if (i == n-1)
+				Console.WriteLine("| "+new string('P', 2*n)+new string(' ', n)+"| I"+new string(' ', n)+"| N"+new string(' ', i)+'N'+new string(' ',2*n-i)+'N');	
+		    else if (i > n-1 & i < 2*n)
+				Console.WriteLine("| "+new string('P', n/2)+new string(' ', 3*n-(n/2))+"| I"+new string(' ', n)+"| N"+new string(' ', i)+'N'+new string(' ',2*n-i)+'N');
+			else if (i == 2*n)
+				Console.WriteLine("\\_"+new string('P', n/2)+new string(' ', 3*n-(n/2))+"\\_I"+new string(' ', n)+"\\_N"+new string(' ', i)+'N'+new string(' ',2*n-i)+'N');
+		}
+		
+	}
+	
+}

@@ -1,0 +1,41 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+    {
+		int n = int.Parse(Console.ReadLine());
+        int dots = 0;
+        int stars = n;
+
+        for (int i = 0; i < n / 2 + 1; i++)
+        {
+            
+                dots = i;
+
+                Console.Write(new string('.', dots));
+                Console.Write(new string('*', stars));
+                Console.Write(new string('.', dots));
+
+                stars = stars - 2;
+                Console.WriteLine();       
+            
+        }
+        stars = stars + 4;
+
+        for (int i = n / 2 - 1; i >= 0; i--)
+        {
+
+            dots = i;
+
+            Console.Write(new string('.', dots));
+            Console.Write(new string('*', stars));
+            Console.Write(new string('.', dots));
+
+            stars = stars + 2;
+            Console.WriteLine();
+
+        }
+	}
+}
+	

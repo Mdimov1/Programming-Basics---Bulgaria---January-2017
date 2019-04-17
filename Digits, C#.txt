@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _06.Digits
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            var chislaNaRed = (n / 100) + (n % 10);
+            var redove = (n / 100) + ((n / 10) % 10);
+            var num = n;
+
+            for (int i = 0; i < redove; i++)
+            {
+                for (int h = 0; h < chislaNaRed; h++)
+                {
+                    if (num % 5 == 0)
+                        num = num - (n / 100);
+                    else if (num % 3 == 0)
+                        num = num - ((n / 10) % 10);
+                    else
+                        num = num + (n % 10);
+                    Console.Write("{0} ",num);
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
