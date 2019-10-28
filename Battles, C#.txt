@@ -13,16 +13,16 @@ namespace _06.Battles
             var numPFirstPlayer = int.Parse(Console.ReadLine());
             var numPSecondPlayer = int.Parse(Console.ReadLine());
             var maxNumFights = int.Parse(Console.ReadLine());
-            var zavyrtaniq = 0;
+            var counter = 0;
     
                 for (int g = 1; g <= numPFirstPlayer; g++)
                 {
                     for (int h = 1; h <= numPSecondPlayer; h++)
                     {
-                    if (zavyrtaniq == maxNumFights)
+                    if (counter == maxNumFights)
                         return;
                     Console.Write("({0} <-> {1}) ", g, h);                 
-                    zavyrtaniq++;
+                    counter++;
                     }
                 }
         }
