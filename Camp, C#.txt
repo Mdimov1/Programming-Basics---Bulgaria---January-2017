@@ -10,7 +10,7 @@ namespace _04.SoftUniCamp
     {
         static void Main(string[] args)
         {
-            var numGrupi = int.Parse(Console.ReadLine());
+            var numGroups = int.Parse(Console.ReadLine());
 
             double car = 0;
             double miniBus = 0;
@@ -18,7 +18,7 @@ namespace _04.SoftUniCamp
             double bigBus = 0;
             double train = 0;
 
-            for (int i = 0; i < numGrupi; i++)
+            for (int i = 0; i < numGroups; i++)
             {
                 var numPeople = int.Parse(Console.ReadLine());
 
